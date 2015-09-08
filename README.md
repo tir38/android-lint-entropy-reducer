@@ -8,6 +8,7 @@ Over time Lint errors and warnings build up in a project. It's a daunting task t
 
 First Time Setup
 ----
+0. ensure that Travis is set to "build pull requests"
 1. create new branch
 2. include this script in project
 3. setup script parameters (see below)
