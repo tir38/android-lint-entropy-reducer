@@ -25,7 +25,7 @@ Now any new pull requests will have to maintain or reduce the number of Lint err
 Update Travis.yml
 ----
 
-Include in your `travis.yml` file:
+Include this script in your `travis.yml` file:
 
 ```
 script:
