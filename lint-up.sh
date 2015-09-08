@@ -7,7 +7,7 @@ TRAVS_GIT_USERNAME="Travis CI server"
 #   lintOptions {
 #       htmlOutput file("[FILE_NAME].html")
 #   }
-LINT_REPORT_FILE="Receipts/lint-report.html"
+LINT_REPORT_FILE="app/lint-report.html"
 
 # File name and relative path of previous results of this script.
 PREVIOUS_LINT_RESULTS_FILE="lint-report/lint-results.xml"
