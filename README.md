@@ -36,7 +36,7 @@ script:
 
 You are encouraged to place this script in a separate directory (here called `scripts`). It also makes sense to run Lint *after* assemble and test. There is no point in running Lint checks if your app isn't compiling and passing tests.
 
-Because any increase in Lint errors/warnings should fail the build, you need to call this script from the `script` stage. Read more about breaking Travis builds [here]  (http://docs.travis-ci.com/user/customizing-the-build/#Breaking-the-Build)
+Because any increase in Lint errors/warnings should fail the build, you need to call this script from the `script` stage. Read more about breaking Travis builds [here](http://docs.travis-ci.com/user/customizing-the-build/#Breaking-the-Build).
 
 Script Parameters
 -----
