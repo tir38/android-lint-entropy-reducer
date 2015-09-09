@@ -75,3 +75,10 @@ This script can perform separate reduction for warnings as well as error.
 # Flag to evaluate warnings. true = check warnings; false = ignore warnings
 CHECK_WARNINGS=true
 ```
+
+This script can also run custom Lint rules. They need to be included in a separate .jar. Read more [here](https://engineering.linkedin.com/android/writing-custom-lint-checks-gradle) and [here](http://tools.android.com/tips/lint-custom-rules).
+
+```
+# File name and relative path to custom lint rules; Can be null or "".
+CUSTOM_LINT_FILE="lint_rules/lint.jar"
+```

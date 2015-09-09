@@ -15,6 +15,10 @@ PREVIOUS_LINT_RESULTS_FILE="lint-report/lint-results.xml"
 # Flag to evaluate warnings. true = check warnings; false = ignore warnings
 CHECK_WARNINGS=true
 
+# File name and relative path to custom lint rules; Can be null or "".
+# TODO handle null
+CUSTOM_LINT_FILE="lint_rules/lint.jar"
+
 # ==== SETUP DONE; DON'T TOUCH ANYTHING BELOW  ====
 
 echo "======= starting Lint script ========"
@@ -27,9 +31,17 @@ echo "======= starting Lint script ========"
 #  exit 0 # success
 #fi
 
+# set directory of custom lint .jar
+if [ "$CUSTOM_LINT_FILE" ]
+then
+    export ANDROID_LINT_JARS=$(pwd)/$CUSTOM_LINT_FILE
+fi
+
+# run lint
 echo "running Lint..."
 ./gradlew clean lint
 
+# begin post processing
 if [ ! -f "$LINT_REPORT_FILE" ]
 then
     echo "Lint HTML report not found."
