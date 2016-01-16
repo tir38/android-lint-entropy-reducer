@@ -1,3 +1,7 @@
+#!/bin/bash
+
+echo "======= starting Android Lint Entropy Reducer ========"
+
 # ==== SETUP ====
 
 # User name for git commits made by this script.
@@ -21,8 +25,6 @@ CUSTOM_LINT_FILE="lint_rules/lint.jar"
 
 # ==== SETUP DONE; DON'T TOUCH ANYTHING BELOW  ====
 
-echo "======= starting Lint script ========"
-
 # TODO this isn't working
 ## only run this script if this is a pull request, not a master merge
 #if [[ "$TRAVIS_PULL_REQUEST" = "false" ]];
@@ -40,6 +42,12 @@ fi
 # run lint
 echo "running Lint..."
 ./gradlew clean lint
+result=$?
+if [ $result != 0 ]
+then
+    echo "failed when running lint gradle task"
+    exit $result
+fi
 
 # begin post processing
 if [ ! -f "$LINT_REPORT_FILE" ]
