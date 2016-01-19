@@ -1,3 +1,4 @@
+puts "=================== starting Android Lint Entropy Reducer ===================="
 
 require 'fileutils'
 require 'pathname'
@@ -12,9 +13,6 @@ rescue LoadError
 end
 
 require 'xmlsimple'
-
-
-puts "=================== starting Android Lint Entropy Reducer ===================="
 
 # ========================  SETUP ============================
 
@@ -34,7 +32,7 @@ PREVIOUS_LINT_RESULTS_FILE=String.new("lint-report/lint-results.txt")
 CHECK_WARNINGS = true
 
 # File name and relative path to custom lint rules; Can be null or "".
-CUSTOM_LINT_FILE = String.new("lint_rules/my_custom_lint_rules.aar")
+CUSTOM_LINT_FILE = String.new("")
 
 # ================ SETUP DONE; DON'T TOUCH ANYTHING BELOW  ================
 
