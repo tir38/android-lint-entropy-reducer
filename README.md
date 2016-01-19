@@ -9,10 +9,10 @@ Over time Lint errors and warnings build up in a project. It's a daunting task t
 0. ensure that Travis is set to "build pull requests"
 1. create new branch
 2. include this script in project and set executable `chmod +x lint-up.rb`
-3. setup script parameters (see below)
 3. update `travis.yml` (see below)
+4. setup script parameters (see below)
 4. commit changes
-5. push to origin
+5. push new branch to origin
 6. open PR against new branch
 7. The script will run and create a baseline of existing error/warning count
 8. merge new branch into master
@@ -28,7 +28,7 @@ Include this script in your `travis.yml` file:
 script:
     - ./gradlew clean assembleDebug
     - ./gradlew clean test
-    - ./scripts/lint-up.rb
+    - ruby scripts/lint-up.rb
 ```
 
 You are encouraged to place this script in a separate directory (here called `scripts`). It also makes sense to run Lint *after* assemble and test. There is no point in running Lint checks if your app isn't compiling and passing tests.
@@ -83,7 +83,7 @@ CHECK_WARNINGS=true
 
 ####CUSTOM_LINT_FILE
 
-This script can also run custom Lint rules. They need to be included in a separate .jar or .aar. Read more [here](https://engineering.linkedin.com/android/writing-custom-lint-checks-gradle) and [here](http://tools.android.com/tips/lint-custom-rules). This parameter can be left blank (either nil or an empty string)
+This script can also run custom Lint rules. They need to be included in a separate .jar. Read more [here](https://engineering.linkedin.com/android/writing-custom-lint-checks-gradle) and [here](http://tools.android.com/tips/lint-custom-rules). This parameter can be left blank (either nil or an empty string)
 
 ```
 # File name and relative path to custom lint rules; Can be nil or "".
