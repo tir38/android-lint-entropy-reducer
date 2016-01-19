@@ -1,19 +1,5 @@
 puts "=================== starting Android Lint Entropy Reducer ===================="
 
-require 'fileutils'
-require 'pathname'
-require 'open3'
-
-# since we need the xml-simple gem, and we want this script self-contained, let's grab it just when we need it
-begin
-  gem "xml-simple"
-rescue LoadError
-  system("gem install xml-simple")
-  Gem.clear_paths
-end
-
-require 'xmlsimple'
-
 # ========================  SETUP ============================
 
 # User name for git commits made by this script.
@@ -35,6 +21,20 @@ CHECK_WARNINGS = true
 CUSTOM_LINT_FILE = String.new("")
 
 # ================ SETUP DONE; DON'T TOUCH ANYTHING BELOW  ================
+
+require 'fileutils'
+require 'pathname'
+require 'open3'
+
+# since we need the xml-simple gem, and we want this script self-contained, let's grab it just when we need it
+begin
+    gem "xml-simple"
+    rescue LoadError
+    system("gem install xml-simple")
+    Gem.clear_paths
+end
+
+require 'xmlsimple'
 
 # add custom Lint jar
 if CUSTOM_LINT_FILE != nil &&
