@@ -1,3 +1,5 @@
+#!/usr/bin/ruby
+
 puts "=================== starting Android Lint Entropy Reducer ===================="
 
 # ========================  SETUP ============================
