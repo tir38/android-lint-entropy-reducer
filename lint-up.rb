@@ -49,12 +49,13 @@ end
 
 # run Lint
 puts "running Lint..."
-system './gradlew clean lint'
+execute = String.new("./gradlew clean lint")
+system execute
 
 # confirm that Lint ran w/out error
 result = $?.to_i
 if result != 0
-    puts "FAIL: failed to run ./gradlew clean lint"
+    puts "FAIL: failed to run " + execute
     exit 1
 end
 
